@@ -99,7 +99,7 @@ app.get("/secure/result", async (req, res) => {
     const { email, password } = req.query;
     const result = await loginUser(email, password);
 
-    return res.status(200).json({ msg: "ok", data: result });
+    return res.status(302).json({ msg: "ok", data: result });
   } catch (error) {
     console.log(error);
     return res.status(400).json({ msg: error });
